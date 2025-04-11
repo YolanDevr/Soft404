@@ -45,10 +45,7 @@ def setup_browser():
     chrome_options.add_argument('--disable-gpu')
     chrome_options.add_argument('--window-size=1920,1080')
 
-    service = Service("/usr/lib/chromium/chromedriver")  # ✅ Dit klopt al bij jou
-    return webdriver.Chrome(service=service, options=chrome_options)
-
-
+    return webdriver.Chrome(options=chrome_options)
 
 
 # --- Check functies ---
