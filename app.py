@@ -38,15 +38,16 @@ def suggest_redirect(url):
 
 def setup_browser():
     chrome_options = Options()
-    chrome_options.binary_location = "/usr/bin/chromium-browser"       # ✅ DE BROWSER
+    chrome_options.binary_location = "/usr/lib/chromium/chromium"  # ✅ Correct pad op Streamlit Cloud
     chrome_options.add_argument('--headless=new')
     chrome_options.add_argument('--no-sandbox')
     chrome_options.add_argument('--disable-dev-shm-usage')
     chrome_options.add_argument('--disable-gpu')
     chrome_options.add_argument('--window-size=1920,1080')
 
-    service = Service("/usr/lib/chromium/chromedriver")                # ✅ DE DRIVER
+    service = Service("/usr/lib/chromium/chromedriver")  # ✅ Dit klopt al bij jou
     return webdriver.Chrome(service=service, options=chrome_options)
+
 
 
 
